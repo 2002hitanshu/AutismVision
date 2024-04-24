@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title>Autism Vision</title>
+    <!-- Fav icon -->
+    <link rel="shortcut icon" href="img/autismvisionclip.png">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../dark-mode.css" id="dark-mode-style">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+</head>
+<body>
+    <nav class="navigation">
+        <!-- Menu button -->
+        <input type="checkbox" class="menu-btn" id="menu-btn">
+        <label for="menu-btn" class="menu-icon">
+            <span class="nav-icon"></span>
+        </label>
+        <!-- Logo -->
+        <a href="index.html" class="logo"><span>Autism</span>Vision</a>
+        <!-- Menu -->
+        <ul class="menu">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="#our-services">About us</a></li>
+        </ul>
+        <!-- Dark mode toggle -->
+        <a href="#" class="nav-appointment-btn" id="dark-mode-toggle">Dark Mode</a>
+    </nav>
+
+    <!-- Main content section -->
+    <section class="main-content">
+        <!-- Image upload container -->
+        <div class="image-upload-container">
+            <div class="upload-box">
+                <label for="file-upload" class="upload-label">
+                    <i class="fas fa-plus"></i>
+                </label>
+                <input type="file" id="file-upload">
+            </div>
+            <div class="model-info">
+                <p>Using VGG16 and VGG19 models for prediction</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script>
+        // JavaScript for dark mode toggle
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const darkModeStyle = document.getElementById('dark-mode-style');
+
+        function toggleDarkMode() {
+            if (darkModeStyle.getAttribute('href') === 'style.css') {
+                darkModeStyle.setAttribute('href', 'dark-mode.css');
+                darkModeToggle.textContent = 'Normal Mode';
+            } else {
+                darkModeStyle.setAttribute('href', 'style.css');
+                darkModeToggle.textContent = 'Dark Mode';
+            }
+        }
+
+        darkModeToggle.addEventListener('click', toggleDarkMode);
+
+        function checkDarkModePreference() {
+            const isDarkMode = localStorage.getItem('darkMode');
+
+            if (isDarkMode === 'true') {
+                darkModeStyle.setAttribute('href', 'dark-mode.css');
+                darkModeToggle.textContent = 'Normal Mode';
+            } else {
+                darkModeStyle.setAttribute('href', 'style.css');
+                darkModeToggle.textContent = 'Dark Mode';
+            }
+        }
+
+        checkDarkModePreference();
+    </script>
+</body>
+</html>

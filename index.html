@@ -7,11 +7,12 @@
     <!--==title========================-->
     <title>Autism Vision</title>
     <!--==Fav-icon=====================-->
-    <link rel="shortcut icon" href="img/autismvisionclip.png" />
+    <link rel="shortcut icon" href="./Autism/images/fav-icon.png" />
     <!--==CSS==========================-->
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="dark-mode.css" id="dark-mode-style">
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
@@ -41,11 +42,11 @@
         <a href="index.html" class="logo"><span>Autism</span>Vision</a>
         <!--**menu*********-->
         <ul class="menu">
-          <li><a href="#our-team">Indulged Components</a></li>
+          <li><a href="#our-team">Our Team</a></li>
           <li><a href="#our-services">About us</a></li>
         </ul>
         <!--**contact*******-->
-        <a href="#" class="nav-appointment-btn">Test</a>
+        <a href="#" class="nav-appointment-btn" id="dark-mode-toggle">Dark Mode</a>
       </nav>
       <!--nav-end-->
 
@@ -62,7 +63,7 @@
           </p>
           <!--btns-->
           <div class="hero-text-btns">
-            <a href="#"
+            <a href="./Autism/upload.html"
               ><i class="fa-solid fa-magnifying-glass"></i>Upload Image</a
             >
             
@@ -433,6 +434,42 @@
 
     <!-- Initialize Swiper -->
     <script>
+
+// darkmode
+// darkmode
+const darkModeToggle = document.getElementById('dark-mode-toggle');
+const darkModeStyle = document.getElementById('dark-mode-style');
+
+// Function to toggle dark mode
+function toggleDarkMode() {
+  if (darkModeStyle.getAttribute('href') === 'style.css') {
+    darkModeStyle.setAttribute('href', 'dark-mode.css');
+    darkModeToggle.textContent = 'Normal Mode';
+  } else {
+    darkModeStyle.setAttribute('href', 'style.css');
+    darkModeToggle.textContent = 'Dark Mode';
+  }
+}
+
+// Event listener for dark mode toggle button
+darkModeToggle.addEventListener('click', toggleDarkMode);
+
+// Function to check local storage for dark mode preference and apply it
+function checkDarkModePreference() {
+  const isDarkMode = localStorage.getItem('darkMode');
+
+  if (isDarkMode === 'true') {
+    darkModeStyle.setAttribute('href', 'dark-mode.css');
+    darkModeToggle.textContent = 'Normal Mode';
+  } else {
+    darkModeStyle.setAttribute('href', 'style.css');
+    darkModeToggle.textContent = 'Dark Mode';
+  }
+}
+
+// Check dark mode preference when the page loads
+checkDarkModePreference();
+
       /*-services--*/
       var swiper = new Swiper(".mySwiperservices", {
         slidesPerView: 1,
