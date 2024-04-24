@@ -7,7 +7,7 @@
     <!-- Title -->
     <title>Autism Vision</title>
     <!-- Fav icon -->
-    <link rel="shortcut icon" href="img/autismvisionclip.png">
+    <link rel="shortcut icon" href="./images/fav-icon.png">
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../dark-mode.css" id="dark-mode-style">
@@ -17,6 +17,87 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <!-- Custom CSS -->
+    <style>
+        .popup-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.popup-content {
+    text-align: center;
+    color: white;
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.popup-header button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.popup-header button:hover {
+    color: #ccc;
+}
+
+.popup-content img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.result-columns {
+    display: flex;
+    justify-content: space-around;
+}
+
+.result-column {
+    flex: 1;
+}
+
+.result-column h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.result-column p {
+    font-size: 1rem;
+}
+
+/* blur */
+/* Apply blur effect when the pop-up window is displayed */
+.popup-container.active {
+    display: block;
+}
+
+.main-content.blur {
+    filter: blur(4px); /* Adjust the blur intensity as needed */
+}
+
+.navigation.blur {
+    filter: blur(4px); /* Adjust the blur intensity as needed */
+}
+
+
+    </style>
 </head>
 <body>
     <nav class="navigation">
@@ -52,37 +133,321 @@
         </div>
     </section>
 
+<!-- Result pop-up container -->
+<div class="popup-container" id="popup-container">
+    <div class="popup-content">
+        <div class="popup-header">
+            <button id="close-popup-btn">&times;</button>
+        </div>
+        <img id="uploaded-image" src="" alt="Uploaded Image">
+        <div class="result-columns">
+            <div class="result-column">
+                <h3>VGG16</h3>
+                <p>Positive</p>
+            </div>
+            <div class="result-column">
+                <h3>VGG19</h3>
+                <p>Positive</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- result end -->
+
+
+<!--==Our-Services======================-->
+<div class="swiper mySwiperservices">
+    <section id="our-services">
+        <!--**heading********************-->
+        <div class="services-heading">
+          <!--text-->
+          <div class="services-heading-text">
+            <strong>About us</strong>
+            <h2>What is AutismVision</h2>
+          </div>
+          <!--btns-->
+          <div class="service-slide-btns">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+    
+        <!--**container*******************-->
+        <div class="services-box-container">
+          <!-- Swiper -->
+          <div class="swiper mySwiperservices">
+            <div class="swiper-wrapper">
+              <!--**1*******-->
+              <div class="swiper-slide">
+                <!--**box1**-->
+                <div class="service-box s-box1">
+                  <!--icon-->
+                  <i class="fa-solid fa-atom"></i>
+                  <!--title-->
+                  <strong>ASD</strong>
+                  <!--details-->
+                  
+                  <p>
+                    Autism Spectrum Disorder (ASD) is a neuro-disorder in which a child or a person has a 
+                    lifelong effect on interaction and communication with others. 
+                      It is diagnosed at any stage in life It is called “behavioral disease” . 
+                  </p>
+                  <!--read more-->
+                  
+                </div>
+              </div>
+              <!--slide-end-->
+              <!--**1*******-->
+              <div class="swiper-slide">
+                <!--**box1**-->
+                <div class="service-box s-box2">
+                  <!--icon-->
+                  <i class="fa-solid fa-diagram-project"></i>
+                  <!--title-->
+                  <strong>CNN</strong>
+                  <!--details-->
+                  <p>
+                    CNN, or Convolutional Neural Network, is a deep learning model
+                    commonly used for image recognition and classification tasks.
+                  </p>
+                  <!--read more-->
+                  
+                </div>
+              </div>
+              <!--slide-end-->
+              <!--**1*******-->
+              <div class="swiper-slide">
+                <!--**box1**-->
+                <div class="service-box s-box3">
+                  <!--icon-->
+                  <i class="fa-solid fa-network-wired"></i>
+                  <!--title-->
+                  <strong>VGG16</strong>
+                  <!--details-->
+                  <p>
+                    VGG16 is a deep convolutional neural network architecture famous for 
+                    image classification, featuring 16 layers, widely used in computer vision.
+                  </p>
+                  <!--read more-->
+                  
+                </div>
+              </div>
+              <!--slide-end-->
+              <!--**1*******-->
+              <div class="swiper-slide">
+                <!--**box1**-->
+                <div class="service-box s-box4">
+                  <!--icon-->
+                  <i class="fa-solid fa-circle-nodes"></i>
+                  <!--title-->
+                  <strong>VGG19</strong>
+                  <!--details-->
+                  <p>
+                    VGG19, an extension of VGG16, is a deep convolutional 
+                    neural network with 19 layers, often used for image recognition tasks.
+                  </p>
+                  <!--read more-->
+                  
+                </div>
+              </div>
+              <!--slide-end-->
+            </div>
+            <!--wrapper-end-->
+          </div>
+          <!--swiper-end-->
+        </div>
+    
+    <!-- trial -->
+        <!--btn-->
+        <span class="service-btn"
+          >Contact Us For Need Any Help And Services
+          <a href="#">Let's get Started</a></span
+        >
+      </section>
+      <!--services-end-->
+</div>
+
+<!-- footersection -->
+<footer>
+    <div class="footer-container">
+      <!--**comoany-box**-->
+      <div class="footer-company-box">
+        <!--logo-->
+        <a href="#" class="logo"><span>Autism</span>Vision</a>
+        <!--details-->
+        <p>
+          Utilizing image data, assess autism presence. 
+          Evaluate various CNN models to enhance detection accuracy.
+        </p>
+        <!--social-box-->
+        <div class="footer-social">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <!--**link-box***-->
+      <div class="footer-link-box">
+        <strong>Main Link's</strong>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#our-services">About</a></li>
+        </ul>
+      </div>
+      <!--**link-box***-->
+      <div class="footer-link-box">
+        <strong>VGG16</strong>
+        <ul>
+          <li><a href="#">VGG16 Overview</a></li>
+          <li><a href="#">VGG16 Architecture</a></li>
+          <li><a href="#">Applications of VGG16</a></li>
+          <li><a href="#">Training and Fine-Tuning</a></li>
+        </ul>
+      </div>
+      <!--**link-box***-->
+      <div class="footer-link-box">
+        <strong>VGG19</strong>
+        <ul>
+          <li><a href="#">VGG19 Overview</a></li>
+          <li><a href="#">VGG19 Architecture</a></li>
+          <li><a href="#">Applications of VGG19</a></li>
+          <li><a href="#">Training and Fine-Tuning</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!--**bottom**********************-->
+    <div class="footer-bottom">
+      <span class="footer-owner">Made By Team AutismVision</span>
+      <span class="copyright">&#169; Copyright 2024 Team AutismVision</span>
+    </div>
+  </footer>
+
     <!-- JavaScript -->
-    <script>
-        // JavaScript for dark mode toggle
-        const darkModeToggle = document.getElementById('dark-mode-toggle');
-        const darkModeStyle = document.getElementById('dark-mode-style');
+   <!-- JavaScript -->
+   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script>
+    // JavaScript for dark mode toggle
+const darkModeToggle = document.getElementById('dark-mode-toggle');
+const darkModeStyle = document.getElementById('dark-mode-style');
 
-        function toggleDarkMode() {
-            if (darkModeStyle.getAttribute('href') === 'style.css') {
-                darkModeStyle.setAttribute('href', 'dark-mode.css');
-                darkModeToggle.textContent = 'Normal Mode';
-            } else {
-                darkModeStyle.setAttribute('href', 'style.css');
-                darkModeToggle.textContent = 'Dark Mode';
-            }
-        }
+function toggleDarkMode() {
+   if (darkModeStyle.getAttribute('href') === 'style.css') {
+       darkModeStyle.setAttribute('href', '../dark-mode.css'); // Correct path to dark-mode.css
+       darkModeToggle.textContent = 'Normal Mode';
+       localStorage.setItem('darkMode', 'true'); // Store dark mode preference in local storage
+   } else {
+       darkModeStyle.setAttribute('href', 'style.css');
+       darkModeToggle.textContent = 'Dark Mode';
+       localStorage.setItem('darkMode', 'false'); // Store dark mode preference in local storage
+   }
+}
 
-        darkModeToggle.addEventListener('click', toggleDarkMode);
+darkModeToggle.addEventListener('click', toggleDarkMode);
 
-        function checkDarkModePreference() {
-            const isDarkMode = localStorage.getItem('darkMode');
+function checkDarkModePreference() {
+   const isDarkMode = localStorage.getItem('darkMode');
 
-            if (isDarkMode === 'true') {
-                darkModeStyle.setAttribute('href', 'dark-mode.css');
-                darkModeToggle.textContent = 'Normal Mode';
-            } else {
-                darkModeStyle.setAttribute('href', 'style.css');
-                darkModeToggle.textContent = 'Dark Mode';
-            }
-        }
+   if (isDarkMode === 'true') {
+       darkModeStyle.setAttribute('href', '../dark-mode.css'); // Correct path to dark-mode.css
+       darkModeToggle.textContent = 'Normal Mode';
+   } else {
+       darkModeStyle.setAttribute('href', 'style.css');
+       darkModeToggle.textContent = 'Dark Mode';
+   }
+}
 
-        checkDarkModePreference();
-    </script>
+checkDarkModePreference();
+//dark mode end
+  
+function displayConfirmation() {
+   const isConfirmed = window.confirm('Are you sure you want to upload this image?');
+   if (isConfirmed) {
+       displayPopup();
+   }
+}
+
+// Function to display the pop-up window
+function displayPopup() {
+   const popup = document.querySelector('.popup-container');
+   popup.classList.add('active'); // Add 'active' class to show the pop-up window
+   document.querySelector('.main-content').classList.add('blur'); // Add 'blur' class to blur the main content
+   document.querySelector('.navigation').classList.add('blur'); // Add 'blur' class to blur the navigation bar
+}
+
+// Function to close the pop-up window
+function closePopup() {
+   const popup = document.querySelector('.popup-container');
+   popup.classList.remove('active'); // Remove 'active' class to hide the pop-up window
+   document.querySelector('.main-content').classList.remove('blur'); // Remove 'blur' class to remove blur from the main content
+   document.querySelector('.navigation').classList.remove('blur'); // Remove 'blur' class to remove blur from the navigation bar
+}
+
+// JavaScript for closing the pop-up window
+const closePopupBtn = document.getElementById('close-popup-btn');
+
+closePopupBtn.addEventListener('click', () => {
+   closePopup();
+   // Reset the src attribute of the uploaded image to remove it
+   const uploadedImage = document.getElementById('uploaded-image');
+   uploadedImage.src = '';
+   // Reset the value of the file input element to clear the selected file
+   const fileUploadInput = document.getElementById('file-upload');
+   fileUploadInput.value = ''; // This line resets the file input
+});
+
+// Function to handle file upload
+function handleFileUpload() {
+   const fileUploadInput = document.getElementById('file-upload');
+   fileUploadInput.addEventListener('change', function(event) {
+       // Once the file is uploaded, trigger the displayConfirmation function
+       displayConfirmation();
+
+       // Get the uploaded file
+       const file = event.target.files[0];
+
+       // Create a FileReader object
+       const reader = new FileReader();
+
+       // Set up event listener for when the FileReader has finished reading the file
+       reader.onload = function(event) {
+           // Get the result (base64 encoded image) and set it as the source of the uploaded image in the pop-up window
+           const uploadedImage = document.getElementById('uploaded-image');
+           uploadedImage.src = event.target.result;
+       };
+
+       // Read the file as a data URL
+       reader.readAsDataURL(file);
+   });
+}
+
+// Call handleFileUpload function to set up the file upload listener
+handleFileUpload();
+
+/*-services--*/
+/*-services--*/
+var swiper = new Swiper(".mySwiperservices", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          700: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 50,
+          },
+        },
+      });
+      
+</script>
+
 </body>
 </html>
