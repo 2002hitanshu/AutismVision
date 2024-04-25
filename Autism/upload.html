@@ -365,7 +365,7 @@ checkDarkModePreference();
 function displayConfirmation() {
    const isConfirmed = window.confirm('Are you sure you want to upload this image?');
    if (isConfirmed) {
-       displayPopup();
+    setTimeout(displayPopup, 3000);
    }
 }
 
